@@ -1,0 +1,19 @@
+version: '3'
+
+networks:
+   backend:
+
+services:
+   test-postgres:
+      image: postgres
+      container_name: test-postgres
+      networks:
+        - backend
+
+   test-app:
+      image: test-app
+      container_name: test-app
+      depends_on:
+         - test-postgres
+      networks:
+        - backend
