@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 import static java.lang.Math.random;
 
 public class Test {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("postgres");
     EntityManager entityManager = entityManagerFactory.createEntityManager();
 
@@ -18,6 +18,7 @@ public class Test {
     }));
 
     while (true) {
+      Thread.sleep(1000);
       entityManager.getTransaction().begin();
       Shop notebook = new Shop("name" + random(), "address" + random());
       entityManager.persist(notebook);
