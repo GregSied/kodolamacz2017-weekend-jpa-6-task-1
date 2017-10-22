@@ -23,4 +23,13 @@ public class Shop {
 
   public Shop() {
   }
+
+  @Override
+  public String toString() {
+    return "Shop{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", address='" + address + '\'' +
+        '}';
+  }
 }

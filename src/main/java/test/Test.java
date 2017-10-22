@@ -20,8 +20,10 @@ public class Test {
     while (true) {
       Thread.sleep(1000);
       entityManager.getTransaction().begin();
-      Shop notebook = new Shop("name" + random(), "address" + random());
-      entityManager.persist(notebook);
+      Shop shop = new Shop("name" + random(), "address" + random());
+      System.out.println("Persisting:");
+      System.out.println(shop);
+      entityManager.persist(shop);
       entityManager.getTransaction().commit();
     }
   }
